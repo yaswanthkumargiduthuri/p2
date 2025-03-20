@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Basic Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">My Flask Shop</a>
+            
+            <div class="search-container">
+                <input type="text" placeholder="Search for products...">
+            </div>
+    
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/cart">Cart</a></li>
+                <li class="y">Login/Sign Up</li>
+
+            </ul>
+        </div>
+    </nav>
+    
+
+    <header>
+        <h1>Welcome to My Flask Project</h1>
+        
+        <!-- Auto & Manual Carousel -->
+        <div class="carousel">
+            <div class="carousel-inner">
+                <input type="radio" id="slide1" name="carousel" checked>
+                <input type="radio" id="slide2" name="carousel">
+                <input type="radio" id="slide3" name="carousel">
+
+                <div class="slides">
+                    <div class="slide">
+                        <img src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Banner 1">
+                    </div>
+                    <div class="slide">
+                        <img src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Banner 2">
+                    </div>
+                    <div class="slide">
+                        <img src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Banner 3">
+                    </div>
+                </div>
+                
+                <!-- Navigation Arrows -->
+                <div class="prev-next">
+                    <label for="slide3" class="prev">&#10094;</label>
+                    <label for="slide2" class="next">&#10095;</label>
+                </div>
+                <div class="prev-next">
+                    <label for="slide1" class="prev">&#10094;</label>
+                    <label for="slide3" class="next">&#10095;</label>
+                </div>
+                <div class="prev-next">
+                    <label for="slide2" class="prev">&#10094;</label>
+                    <label for="slide1" class="next">&#10095;</label>
+                </div>
+
+                <!-- Dots for Navigation -->
+                <div class="carousel-dots">
+                    <label for="slide1"></label>
+                    <label for="slide2"></label>
+                    <label for="slide3"></label>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <section class="gallery">
+        <h2>Image Gallery</h2>
+        <div class="image-container">
+            <div class="image-card">
+                <a href="product1.html">
+                    <div class="image-wrapper">
+                        <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 1">
+                        <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 1">
+                    </div>
+                    <p class="price">$25.99</p>
+                    <p class="rating">⭐⭐⭐⭐☆ (4.5)</p>
+                </a>
+            </div>
+            <div class="image-card">
+                <a href="product2.html">
+                    <div class="image-wrapper">
+                        <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 2">
+                        <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 2">
+                    </div>
+                    <p class="price">$19.99</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ (5.0)</p>
+                </a>
+            </div>
+            <div class="image-card">
+                <a href="product3.html">
+                    <div class="image-wrapper">
+                        <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 3">
+                        <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 3">
+                    </div>
+                    <p class="price">$30.49</p>
+                    <p class="rating">⭐⭐⭐⭐ (4.0)</p>
+                </a>
+            </div>
+            <div class="image-card">
+                <a href="product3.html">
+                    <div class="image-wrapper">
+                        <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 3">
+                        <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 3">
+                    </div>
+                    <p class="price">$30.49</p>
+                    <p class="rating">⭐⭐⭐⭐ (4.0)</p>
+                </a>
+            </div>  
+        </div><br>
+        <div class="image-container">
+            <div class="image-card">
+                <a href="product1.html">
+                    <div class="image-wrapper">
+                        <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 1">
+                        <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 1">
+                    </div>
+                    <p class="price">$25.99</p>
+                    <p class="rating">⭐⭐⭐⭐☆ (4.5)</p>
+                </a>
+            </div>
+            <div class="image-card">
+                <a href="product2.html">
+                    <div class="image-wrapper">
+                        <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 2">
+                        <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 2">
+                    </div>
+                    <p class="price">$19.99</p>
+                    <p class="rating">⭐⭐⭐⭐⭐ (5.0)</p>
+                </a>
+            </div>
+            <div class="image-card">
+                <a href="product3.html">
+                    <div class="image-wrapper">
+                        <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 3">
+                        <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 3">
+                    </div>
+                    <p class="price">$30.49</p>
+                    <p class="rating">⭐⭐⭐⭐ (4.0)</p>
+                </a>
+            </div>
+            <div class="image-card">
+                <a href="product3.html">
+                    <div class="image-wrapper">
+                        <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 3">
+                        <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 3">
+                    </div>
+                    <p class="price">$30.49</p>
+                    <p class="rating">⭐⭐⭐⭐ (4.0)</p>
+                </a>
+            </div>  
+        </div> <br></br><br></br>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 My Flask Project</p>
+    </footer>
+</body>
+</html>

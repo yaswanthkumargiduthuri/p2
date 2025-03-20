@@ -1,0 +1,443 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+/* --- Carousel Styling --- */
+/* Move heading to top-left *//* --- Header Styling --- */
+header {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+}
+
+
+/* 🔹 Navbar Styling */
+.navbar {
+    background: #333;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+}
+
+/* 🔹 Logo Styling */
+.logo {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 🔹 Search Bar - Centered & Large */
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container input {
+    width: 70%;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    text-align: center;
+}
+
+/* 🔹 Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+    color: white;
+    font-size: 18px;
+}
+
+.nav-links .y:hover{
+    background: red;
+    border-radius: 5px;
+    width: 200px;
+    height: 120px;
+    display:inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    background: #444;
+    border-radius: 5px; 
+}
+
+
+
+/* --- Heading Styling (Overlay on Carousel) --- */
+h1 {
+    position: absolute;
+    top: 10px;
+    left: 30px;
+    font-size: 28px;
+    color: white;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.6); /* Dark background for visibility */
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 10;
+}
+
+/* --- Carousel Styling --- */
+.carousel {
+    width: 80%;
+    margin: 90px auto 0; /* Added margin to push it below heading */
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.carousel-inner {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Hide radio buttons */
+input[type="radio"] {
+    display: none;
+}
+
+.slides {
+    display: flex;
+    width: 100%;
+    transition: transform 1s ease-in-out; 
+}
+
+.slide {
+    width: 100%;
+    flex: 0 0 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Automatic Sliding */
+@keyframes slide {
+    0%, 20% { transform: translateX(0%); }
+    25%, 45% { transform: translateX(-100%); }
+    50%, 70% { transform: translateX(-200%); }
+    75%, 100% { transform: translateX(0%); }
+}
+
+.slides {
+    animation: slide 12s infinite ease-in-out;
+}
+
+/* --- Navigation Arrows --- */
+.prev-next {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+
+.prev, .next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px 15px;
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50%;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* --- Dots Navigation --- */
+.carousel-dots {
+    text-align: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel-dots label {
+    width: 12px;
+    height: 12px;
+    background-color: gray;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+/* Active Slide */
+input[type="radio"]:checked ~ .slides {
+    animation: none;
+}
+
+#slide1:checked ~ .slides {
+    transform: translateX(0%);
+}
+
+#slide2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+
+
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* --- Image Hover Effect --- */
+.image-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; 
+}
+
+.image-card {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 220px;
+    transition: transform 0.3s;
+}
+
+.image-card:hover {
+    transform: scale(1.05);
+}
+
+.image-wrapper {
+    position: relative;
+    width: 200px;
+    height: 150px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.image-wrapper .hover {
+    opacity: 0;
+}
+
+.image-wrapper:hover .hover {
+    opacity: 1;
+}
+
+.image-wrapper:hover .default {
+    opacity: 0;
+}
+
+/* Clickable Image Styles */
+.image-card a {
+    text-decoration: none;
+    color: black;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #27ae60;
+    margin: 5px 0;
+}
+
+.rating {
+    font-size: 16px;
+    color: #f39c12;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    position: fixed;
+    bottom:0;
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🔹 General Styles */ 
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .cart-heading {
+            text-align: left;
+            padding: 20px;
+            background: #0275d8;
+            color: white;
+            margin: 0;
+        }
+        .cart-container {
+            display: flex; 
+            margin:44px 130px;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .cart-items {
+            flex: 2; 
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .cart-item {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .cart-item img {
+            width: 300px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .item-details {
+            flex-grow: 1;
+        }
+        .price {
+            font-weight: bold;
+            color: #27ae60;
+        }
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .quantity-control button {
+            border: none;
+            background: #ddd;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .remove {
+            background: red;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .price-summary {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .checkout {
+            background: #ff9800;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .similar-products {
+            margin: 44px 150px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .product-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 15px;
+            padding: 10px;
+        }
+        .product-card {
+            flex: 4; 
+            width: 120px;
+            text-align: center;
+            background: #fff;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        } 
+        .product-card img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+ 
+ 

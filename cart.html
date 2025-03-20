@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1 class="cart-heading">Shopping Cart</h1>
+    </header>
+
+    <main class="cart-container">
+        <!-- Cart Items Section -->
+        <section class="cart-items">
+            <div class="cart-item">
+                <img src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Product Image">
+                <div class="item-details">
+                    <h2>Product Name</h2>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-control">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    <button class="remove">Remove</button>
+                </div>
+            </div>
+            <!-- Repeat for multiple items -->
+        </section>
+
+        <!-- Price Summary -->
+        <aside class="price-summary">
+            <h2>Price Details</h2>
+            <p>Subtotal: $25.99</p>
+            <p>Discount: -$2.00</p>
+            <p><strong>Total: $23.99</strong></p>
+            <button class="checkout">Proceed to Checkout</button>
+        </aside>
+
+        
+    </main>
+    <main class="cart-container">
+
+        <section class="cart-items">
+            <div class="cart-item">
+                <img src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Product Image">
+                <div class="item-details">
+                    <h2>Product Name</h2>
+                    <p class="price">$25.99</p>
+                    <div class="quantity-control">
+                        <button>-</button>
+                        <span>1</span>
+                        <button>+</button>
+                    </div>
+                    <button class="remove">Remove</button>
+                </div>
+            </div>
+            <!-- Repeat for multiple items -->
+        </section>
+        <aside class="price-summary">
+            <h2>Price Details</h2>
+            <p>Subtotal: $25.99</p>
+            <p>Discount: -$2.00</p>
+            <p><strong>Total: $23.99</strong></p>
+            <button class="checkout">Proceed to Checkout</button>
+        </aside>
+    </main
+
+    <!-- Similar Products Section -->
+    <section class="similar-products">
+        <h2>Similar Products</h2>
+        <div class="product-scroll">
+            <div class="product-card">  
+                <div class="image-wrapper">
+                <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 3">
+                <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 3">
+            </div>
+                <p>name</p><p>$19.99</p>
+            </div><br></br>
+            <div class="product-card"> 
+
+
+                <div class="image-wrapper">
+                    <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 3">
+                    <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 3">
+                </div>
+
+                <p>name</p><p>$30.49</p>
+            </div>
+            <div class="product-card"> 
+
+
+                <div class="image-wrapper">
+                    <img class="default" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Image 3">
+                    <img class="hover" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Hover Image 3">
+                </div>
+
+                <p>name</p><p>$30.49</p>
+            </div>
+            <div class="product-card"> 
+
+
+                <div class="image-wrapper">
+                    <img class="default" src="{{ url_for('static', filename='images/p2.jpg') }}" alt="Image 3">
+                    <img class="hover" src="{{ url_for('static', filename='images/p3.jpg') }}" alt="Hover Image 3">
+                     
+                </div>
+
+                <p>name</p><p>$30.49</p>
+            </div>
+            <!-- More items -->
+        </div>
+    </section>
+</body>
+</html>
